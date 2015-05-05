@@ -50,6 +50,7 @@ public class MainActivity extends ActionBarActivity{
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().add(R.id.menu, new MainMenu()).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.mainDescription, new Description(packageDescription)).commit();
         }
     }
 }

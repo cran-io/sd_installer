@@ -1,9 +1,8 @@
 package cranio.com.sd_installer;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class MainMenu extends Fragment{
+
+    Fragment frag;
+    android.support.v4.app.FragmentTransaction fragTransaction;
 
     int countGames = 0;
     File dirInfo = new File("storage/extSdCard/games/", "game"+ Integer.toString(countGames) +".txt");
@@ -36,7 +38,7 @@ public class MainMenu extends Fragment{
 
 //      Here I create the games with their properties
         int field = 0;
-        Game[] games = new Game[countGames];
+        final Game[] games = new Game[countGames];
         for(int i=0;i<games.length;i++) games[i] = new Game();
 //      Here I re initialize the countGames variable to zero in order to create the new objects for each file
         countGames = 0;
@@ -65,7 +67,7 @@ public class MainMenu extends Fragment{
 
 
 //      Here I add the buttons to the menu for each game
-        
+
         View mainMenu = inflater.inflate(R.layout.menu_fragment,container,false);
 
         LinearLayout menu = (LinearLayout) mainMenu.findViewById(R.id.mainMenuButtons);
@@ -78,6 +80,18 @@ public class MainMenu extends Fragment{
             button[i].setText(games[i].getName());
             button[i].setId(i);
             menu.addView(button[i]);
+        }
+
+        for(int i=0;i<games.length;i++){
+            final int finalI = i;
+            button[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    frag = new GameDescription(games[finalI]);
+                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.mainDescription,frag);
+                    fragTransaction.commit();
+                }
+            });
         }
 
         return mainMenu;
