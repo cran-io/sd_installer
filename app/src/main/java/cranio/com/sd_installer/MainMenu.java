@@ -64,8 +64,8 @@ public class MainMenu extends Fragment{
         }while(dirInfo.exists());
 
 
-//        super.onCreate(savedInstanceState);
-
+//      Here I add the buttons to the menu for each game
+        
         View mainMenu = inflater.inflate(R.layout.menu_fragment,container,false);
 
         LinearLayout menu = (LinearLayout) mainMenu.findViewById(R.id.mainMenuButtons);
