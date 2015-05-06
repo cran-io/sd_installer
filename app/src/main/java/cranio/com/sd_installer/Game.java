@@ -3,6 +3,9 @@ package cranio.com.sd_installer;
 import java.util.ArrayList;
 import java.util.List;
 
+//  This is the class that I use for each game
+//  Basically it has some values and the regulars getters and setters
+
 public class Game {
 
     String name="";
