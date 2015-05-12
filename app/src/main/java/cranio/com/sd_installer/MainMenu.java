@@ -1,8 +1,8 @@
 package cranio.com.sd_installer;
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,14 +20,23 @@ public class MainMenu extends Fragment{
     android.support.v4.app.FragmentTransaction fragTransaction;
 
     int countGames = 0;
-    File dirInfo = new File("storage/extSdCard/games/", "game"+ Integer.toString(countGames) +".txt");
-
+//    File dirInfo = new File("storage/extSdCard/games/", "game"+ Integer.toString(countGames) +"/info.txt");
+    File dirInfo;
     public MainMenu(){
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+//      First I check for the ubication of the sd card
+
+        String path = null;
+
+        if(new File("/storage/extSdCard/games/").exists()) path="/storage/extSdCard/games/";
+        else if(new File("/storage/sdcard1/games/").exists()) path="/storage/sdcard1/games/";
+
+        dirInfo = new File(path, "game"+ Integer.toString(countGames) +"/info.txt");
 
 //      I supposed that the package has at least ONE game. So here I check the quantity of games in the package
         int countGames = -1;
@@ -36,14 +45,13 @@ public class MainMenu extends Fragment{
 
         do{
             countGames++;
-            dirInfo = new File("storage/extSdCard/games/", "game"+ Integer.toString(countGames) +".txt");
+            dirInfo = new File(path, "game"+ Integer.toString(countGames) +"/info.txt");
         }while(dirInfo.exists());
 
 //      Here I create the objects that I need for the quantity of games that I got
 
         int field = 0;
         final Game[] games = new Game[countGames];
-        for(int i=0;i<games.length;i++) games[i] = new Game();
 
 //      Here I re initialize the countGames variable to zero in order to create the new objects for each file
 
@@ -51,23 +59,25 @@ public class MainMenu extends Fragment{
 
 //      Here I check all the properties for each game that is in the SDCard
 
-        dirInfo = new File("storage/extSdCard/games/", "game"+ Integer.toString(countGames) +".txt");
+//        dirInfo = new File("storage/extSdCard/games/", "game"+ Integer.toString(countGames) +"/info.txt");
+        dirInfo = new File(path, "game"+ Integer.toString(countGames) +"/info.txt");
         do{
             try {
                 BufferedReader brGames = new BufferedReader(new FileReader(dirInfo));
                 String strLine;
-                games[countGames] = new Game();
+                games[countGames] = new Game(countGames);
                 while ((strLine = brGames.readLine()) != null) {
                     if(field==0) games[countGames].createName(strLine);
                     if(field==1) games[countGames].createDescription(strLine);
                     if(field==2) games[countGames].createPathIcon(strLine);
-                    else if(field>2) games[countGames].createPathImage(strLine);
+                    if(field==3) games[countGames].createApkName(strLine);
+                    else if(field>3) games[countGames].createPathImage(strLine);
                     field++;
                 }
                 brGames.close();
                 field = 0;
                 countGames++;
-                dirInfo = new File("storage/extSdCard/games/", "game"+ Integer.toString(countGames) +".txt");
+                dirInfo = new File(path, "game"+ Integer.toString(countGames) +"/info.txt");
             }
             catch (IOException e) {
 //              Here I am going to show a toast or a window error because the program cant find the file
@@ -86,7 +96,7 @@ public class MainMenu extends Fragment{
 
         for(int i=0;i<games.length;i++){
             button[i] = new Button(mainMenu.getContext());
-            button[i].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            button[i].setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
             button[i].setText(games[i].getName());
             button[i].setId(i);
             menu.addView(button[i]);

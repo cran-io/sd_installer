@@ -1,21 +1,23 @@
 package cranio.com.sd_installer;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GameDescription extends Fragment{
@@ -26,21 +28,28 @@ public class GameDescription extends Fragment{
         game = gameReceive;
     }
 
-    @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 //      First I create the view that I want to add to my layout & also make the connection with the part of the layout
 //      that I'm going to fill with the description of the game and the images of the preview of the game
 
-        View gameDescriptionView = inflater.inflate(R.layout.description_fragment,container,false);
+        final View gameDescriptionView = inflater.inflate(R.layout.description_fragment,container,false);
 
         LinearLayout imagesOfTheGame = (LinearLayout) gameDescriptionView.findViewById(R.id.imagesOfPreview);
 
-//      Here i create a simple TextView that is going to get the name of the game and make the connection with the
+//      Here I create a simple TextView that is going to get the name of the game and make the connection with the
 //      part of the layout where I want to be display
 
         TextView nameOfTheGame = (TextView) gameDescriptionView.findViewById(R.id.nameOfGame);
         nameOfTheGame.setText(game.getName());
+
+//      Here I create a ImageView that is going to get the path of the logo of the game
+
+        ImageView logoOfTheGame = (ImageView) gameDescriptionView.findViewById(R.id.logoOfTheGame);
+        File dirLogo = new File(game.getPathIcon());
+        Uri uriLogo = Uri.fromFile(dirLogo);
+        logoOfTheGame.setImageURI(uriLogo);
 
 //      I do the same thing with the description of the game
 
@@ -59,11 +68,54 @@ public class GameDescription extends Fragment{
             File imgFile = new File(game.getPathImage().get(i));
             Uri uri = Uri.fromFile(imgFile);
             imageOfDescription[i].setImageURI(uri);
+            imageOfDescription[i].setScrollContainer(true);
+            imageOfDescription[i].setAdjustViewBounds(true);
             imagesOfTheGame.addView(imageOfDescription[i]);
         }
 
+//      Here I set the button to install the game
+
+        Button install = (Button) gameDescriptionView.findViewById(R.id.install_button);
+        install.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final InstallGame gameToInstall = new InstallGame(game);
+                final Intent install;
+                install = gameToInstall.getIntent();
+                if(install==null)
+                {
+                    new AlertDialog.Builder(gameDescriptionView.getContext())
+                            .setTitle("TabiGames couldn't find the game...")
+                            .setMessage("...that you want to install, check if the SD Card is insert or contact your provider").show();
+                }
+                else{
+                    Intent msgIntent = new Intent(getActivity(), ServiceOfControl.class);
+                    String fileToDelete = game.description;
+                    msgIntent.putExtra("envio", fileToDelete);
+                    getActivity().startService(msgIntent);
+                    startActivity(install);
+                }
+            }
+        });
+        
 //      Finally I return the view with all the sets
 
         return gameDescriptionView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        InstallGame gameToDelete = new InstallGame(game);
+//        Log.d("aca eliminamos", "el juego");
+//        Log.d("aca eliminamos", game.getPathZip());
+        gameToDelete.deleteGameApk();
+//        Log.d("volvimos", "volviste");
+//        ActivityManager am = (ActivityManager) getActivity().getSystemService(Context.ACTIVITY_SERVICE);
+//
+//        // get the info from the currently running task
+//
+//        List< ActivityManager.RunningTaskInfo > taskInfo = am.getRunningTasks(1);
+//        Log.d("iniciando", "aca fue cuando resumio " + taskInfo.get(0).topActivity.getClassName());
     }
 }

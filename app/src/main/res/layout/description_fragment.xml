@@ -1,74 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:id="@+id/description_game">
-
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/nameOfGame" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/logoOfTheGame"
-            android:layout_gravity="center_vertical" />
-
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/material_blue_grey_800">
     </LinearLayout>
 
-    <Button
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/install_game"
-        android:id="@+id/install_button" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/material_blue_grey_800">
+        </LinearLayout>
 
-            <TextView
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView" >
+
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/txtDescriptionOfTheGame" />
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/contentOfDescription">
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/scrollView2"
-                android:layout_gravity="center_horizontal" >
-
-                <HorizontalScrollView
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/logoOfTheGame"
+                        android:layout_gravity="center_vertical" />
+
+                    <TextView
+                        android:layout_weight="0.85"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Medium Text"
+                        android:id="@+id/nameOfGame"
+                        android:gravity="center_vertical" />
+
+                    <Button
+                        android:layout_weight="0.1"
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/install_game"
+                        android:id="@+id/install_button" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/horizontalScrollView" >
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:layout_marginLeft="10dp"
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:id="@+id/imagesOfPreview"></LinearLayout>
-                </HorizontalScrollView>
-            </ScrollView>
+                    android:id="@+id/txtDescriptionOfTheGame"
+                    android:gravity="center_vertical" />
 
-        </LinearLayout>
-    </ScrollView>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/imagesOfPreview">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
