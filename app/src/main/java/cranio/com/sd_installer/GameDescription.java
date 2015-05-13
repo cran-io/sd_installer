@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -90,8 +91,8 @@ public class GameDescription extends Fragment{
                 }
                 else{
                     Intent msgIntent = new Intent(getActivity(), ServiceOfControl.class);
-                    String fileToDelete = game.description;
-                    msgIntent.putExtra("envio", fileToDelete);
+                    String fileToDelete = game.getNameOfApk();
+                    msgIntent.putExtra("sendInfo", fileToDelete);
                     getActivity().startService(msgIntent);
                     startActivity(install);
                 }
@@ -103,19 +104,4 @@ public class GameDescription extends Fragment{
         return gameDescriptionView;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        InstallGame gameToDelete = new InstallGame(game);
-//        Log.d("aca eliminamos", "el juego");
-//        Log.d("aca eliminamos", game.getPathZip());
-        gameToDelete.deleteGameApk();
-//        Log.d("volvimos", "volviste");
-//        ActivityManager am = (ActivityManager) getActivity().getSystemService(Context.ACTIVITY_SERVICE);
-//
-//        // get the info from the currently running task
-//
-//        List< ActivityManager.RunningTaskInfo > taskInfo = am.getRunningTasks(1);
-//        Log.d("iniciando", "aca fue cuando resumio " + taskInfo.get(0).topActivity.getClassName());
-    }
 }

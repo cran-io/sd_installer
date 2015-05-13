@@ -38,6 +38,7 @@ public class InstallGame {
         if(!unzipDirectory.exists()) unzipDirectory.mkdir();
 
 //      With this I descompress the zip file that is protected with a password
+//      Here is the pass that I need to get with the server in order to control the security of the apks
 
         Decompress d = new Decompress(zipFile, unzipLocation, "cacaca");
         Boolean lecture = false;

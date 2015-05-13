@@ -20,7 +20,6 @@ public class MainMenu extends Fragment{
     android.support.v4.app.FragmentTransaction fragTransaction;
 
     int countGames = 0;
-//    File dirInfo = new File("storage/extSdCard/games/", "game"+ Integer.toString(countGames) +"/info.txt");
     File dirInfo;
     public MainMenu(){
 
@@ -121,4 +120,3 @@ public class MainMenu extends Fragment{
         return mainMenu;
     }
 }
-
