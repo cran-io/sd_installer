@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="460dp"
+    android:background="@drawable/background">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/txtPackageName"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="#ff000000"
+            android:textColor="#ffffffff"
+            android:textSize="35dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgArrorLeft"
+            android:src="@drawable/arrow_left"
+            android:layout_alignParentLeft = "true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgArrowRight"
+            android:src="@drawable/arrow_right"
+            android:layout_gravity="center"
+            android:layout_alignParentRight = "true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/imageView"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/black_side_bar"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp" />
+
+            <ScrollView android:orientation="vertical" android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/gamesPackagesMenu">
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text"
+                        android:id="@+id/buttonGame1"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_selected"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text"
+                        android:id="@+id/buttonGame2"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text2"
+                        android:id="@+id/buttonGame3"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text2"
+                        android:id="@+id/buttonGame4"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text2"
+                        android:id="@+id/buttonGame5"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text2"
+                        android:id="@+id/buttonGame6"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text2"
+                        android:id="@+id/buttonGame7"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text2"
+                        android:id="@+id/buttonGame8"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text2"
+                        android:id="@+id/buttonGame9"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="212dp"
+                        android:layout_height="62dp"
+                        android:text="Large Text2"
+                        android:id="@+id/buttonGame10"
+                        android:textColor="#ffffffff"
+                        android:textSize="23dp"
+                        android:background="@drawable/game_menu"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/green_side_bar" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+
+                <ScrollView android:orientation="vertical" android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:id="@+id/gameDescription">
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout><!-- From: file:/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/src/main/res/layout/package_menu.xml -->

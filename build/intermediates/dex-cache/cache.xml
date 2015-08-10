@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/agustinquintanamurta/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.0/support-annotations-22.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="281bc6c58ecb3644c23fbc5ee0452019f67b4d5d">
+        <dex dex="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.0-13aea9244795b6219364cecdd6f4c68594ab1d29.jar" />
+    </item>
+    <item
+        jar="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/libs/org.apache.commons.io.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b90b6ac57cf27a2858eaa490d02ba7945d18ca7b">
+        <dex dex="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/pre-dexed/debug/org.apache.commons.io-b56ff92c288f27752430a2c126b735eac20855be.jar" />
+    </item>
+    <item
+        jar="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/libs/zip4j_1.3.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3e20955923c5b61bfbcd4590a87720643c729695">
+        <dex dex="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/pre-dexed/debug/zip4j_1.3.2-102d8bed6b56a15645ea615d45b1a1e174d7af85.jar" />
+    </item>
+    <item
+        jar="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/libs/org.json-20120521.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e04ebf63b984b19433748f06d50c1aba995a6292">
+        <dex dex="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/pre-dexed/debug/org.json-20120521-aa05ea729a4ce974dc3e8a0259eed253ab12fd77.jar" />
+    </item>
+    <item
+        jar="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="983e2f375504bc04def18e709c35192afe92e65f">
+        <dex dex="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/pre-dexed/debug/classes-7ba68dd4df3275dae35c336cc275dc2a90ad739b.jar" />
+    </item>
+    <item
+        jar="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="eeebabdfd8203f6ab639ccea4ffa1f20e1adee3a">
+        <dex dex="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/pre-dexed/debug/classes-996f84d578db1131cde0e00a9637bb61bc31ae02.jar" />
+    </item>
+    <item
+        jar="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/libs/internal_impl-22.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="025cb89f2896c63200ff4c2e6c467a95691d880a">
+        <dex dex="/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.0-a3d6d0cba03e61e28ca2c0be536f123a94dcee82.jar" />
+    </item>
+
+</items>

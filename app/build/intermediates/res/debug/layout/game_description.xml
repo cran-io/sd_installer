@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffedffec">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/imgLogoOfGame"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp">
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Large Text"
+                        android:id="@+id/txtGameName"
+                        android:textSize="45dp"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:layout_width="190dp"
+                        android:layout_height="70dp"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/InstallButton"
+                        android:text="Instalar"
+                        android:textSize="35dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:background="@drawable/install_button"
+                        android:layout_marginLeft="130dp"
+                        android:textColor="#ffffffff" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="600dp"
+                    android:layout_height="2dp"
+                    android:background="#ff000000"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"></LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"
+                    android:id="@+id/txtShortDescription"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="12dp" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:id="@+id/horizontalScrollView" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ff969d94">
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview1"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview2"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview3"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview4"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview5"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview6"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview7"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview8"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview9"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+            <ImageView
+                android:layout_width="342dp"
+                android:layout_height="200dp"
+                android:id="@+id/imgPreview10"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="#ffffffff">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffffff">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Descripción"
+                android:id="@+id/textView"
+                android:textSize="50dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:background="#ff000000"></LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffffff">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/txtDescription"
+            android:background="#ffffffff"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="45dp"
+            android:textColor="#ff000000" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center_vertical"
+            android:background="#ff000000"></LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/txtShortDescriptionBotton"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="right"
+            android:background="#ffffffff" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/src/main/res/layout/game_description.xml -->

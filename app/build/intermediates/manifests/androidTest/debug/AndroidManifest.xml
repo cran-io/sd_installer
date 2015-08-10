@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cran.io.com.sdinstaller.test">
+
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22" />
+
+    <application>
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="cran.io.com.sdinstaller"
+                     android:handleProfiling="false"
+                     android:functionalTest="false"
+                     android:label="Tests for cran.io.com.sdinstaller"/>
+</manifest>

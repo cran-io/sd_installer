@@ -1,0 +1,29 @@
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:orientation="vertical" android:layout_width="fill_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@drawable/background"-->
+    <!--android:id="@+id/mainView"-->
+    <!-->-->
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ff000000"
+        android:id="@+id/mainScroll"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff000000"
+            android:id="@+id/mainMenu"
+            >
+
+        </LinearLayout>
+    </ScrollView>
+
+<!--</LinearLayout>-->
+
+<!-- From: file:/Users/agustinquintanamurta/Documents/cranio/SdInstaller/app/src/main/res/layout/main_menu.xml -->
