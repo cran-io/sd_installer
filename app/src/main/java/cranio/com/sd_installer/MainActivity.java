@@ -3,6 +3,8 @@ package cranio.com.sd_installer;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.provider.Settings;
@@ -10,11 +12,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class MainActivity extends ActionBarActivity{
 
@@ -26,7 +30,59 @@ public class MainActivity extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//      First I'm going to check what is the route of the external storage, I can't use the "Environment.getExternalStorageDirectory()"
+//      The first thing that I'm going to do is to check that the SD has the key in order to know if
+//      is a legal tabi games SD card
+
+        AccesControl control = new AccesControl();
+//        boolean controlAcces = control.returnId();
+
+//        if(controlAcces)
+//        {
+            SharedPreferences settings = getApplicationContext().getSharedPreferences("tabletId",0);
+            if(!settings.contains("idTablet")){
+                Log.d("NO MODIFICAMOS","NADETAAAAAAAAAAAA");
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("idTablet", Build.SERIAL);
+                editor.apply();
+            }
+
+        String sd_cid = null;
+        try {
+
+            File file = new File("/sys/block/mmcblk1");
+            String memBlk;
+            if (file.exists() && file.isDirectory()) {
+
+                memBlk = "mmcblk1";
+            } else {
+                memBlk = "mmcblk0";
+            }
+
+            Process cmd = Runtime.getRuntime().exec("cat /sys/block/" + memBlk + "/device/cid");
+            BufferedReader br = new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+            sd_cid = br.readLine();
+
+            Log.d("NO MODIFICAMOS",sd_cid);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+            String homeScore = settings.getString("idTablet", "0");
+
+            // Apply the edits!
+            Log.d("todo bien","masaaaaaaaaaaaa " + homeScore);
+//        }
+
+//        else
+//        {
+//            Toast.makeText(getApplicationContext(), "This is not an original Tabi Games SD Card!",
+//                    Toast.LENGTH_LONG).show();
+//        }
+
+
+
+//      I'm going to check what is the route of the external storage, I can't use the "Environment.getExternalStorageDirectory()"
 //      command because in some tablets and smartphones its returns /emulated/ by default of the manufacture of the terminal
 
         String path = null;
